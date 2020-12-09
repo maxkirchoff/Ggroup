@@ -1,0 +1,114 @@
+
+// Universal
+
+body, html {
+	font-family: $font_trim;
+	color: $dark-blue;
+
+}
+
+#wrapper {
+	background-color: #fff;
+}
+
+html {
+	height: 100%;
+	margin: 0 !important;
+}
+
+body {
+	min-height: 100%;
+background-color: #f7f8fa;
+
+
+	@media only screen and (min-width: $tablet-breakpoint) {
+
+	}
+
+	&.nav-open {
+		overflow:hidden;
+	}
+
+	&.error404 {
+
+	}
+}
+
+body, p, input, textarea, button, * {
+	font-size: 4.65vw;
+	line-height: 1.7;
+	@media only screen and (min-width: $tablet-breakpoint) {
+		font-size: 1.05vw;
+	}
+	@media only screen and (min-width: $lgdesktop-breakpoint) {
+		font-size: 15px;
+	}
+}
+
+#wrapper {
+	//max-width: 1440px;
+	margin: 0 auto;
+}
+
+.hide-desktop {
+	display: block;
+	@media only screen and (min-width: $tablet-breakpoint) {
+		display: none;
+	}
+}
+
+.hide-mobile {
+	display: none;
+	@media only screen and (min-width: $tablet-breakpoint) {
+		display: block;
+	}
+}
+
+
+h1, h2, h3, h4, h5 {
+	font-family: $font_trim_poster;
+}
+
+h2 {
+	font-size: 8.125vw;
+	line-height: 1.35;
+	@media only screen and (min-width: $tablet-breakpoint) {
+		font-size: 2.5vw;
+	}
+	@media only screen and (min-width: $lgdesktop-breakpoint) {
+		font-size: 36px;
+	}
+}
+
+h3 {
+	font-size: 5.625vw;
+	@media only screen and (min-width: $tablet-breakpoint) {
+		font-size: 24px;
+	}
+}
+
+.image {
+	img {
+		display: block;
+		width: 100%;
+		max-width: 100%;
+	}
+
+	&.has-gradient {
+		position: relative;
+		&:after {
+			content: "";
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(90deg, rgba(23,23,53,1), rgba(23,23,53,0));
+		}
+	}
+}
+
+button {
+	outline: none;
+	border: none;
+}

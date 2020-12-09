@@ -1,0 +1,100 @@
+.feature-quote {
+  background-color: $light-blue;
+  color: $dark-blue;
+  padding: 20vw 6.25vw;
+  @media only screen and (min-width: $tablet-breakpoint) {
+    
+  }
+
+  .quote {
+    margin-bottom: 6.25vw;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .quote-attribution {
+    font-weight: 600;
+
+    .quote-attribution-name {
+      margin-bottom: 1.5vw;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        margin-bottom: 0;
+        display: inline;
+        &:after {
+          content: ", ";
+        }
+      }
+      &:before {
+        content: "— ";
+      }
+    }
+    .quote-attribution-title {
+      @media only screen and (min-width: $tablet-breakpoint) {
+        display: inline;
+      }
+    }
+  }
+}
+
+.quote-image {
+  position: relative;
+  @media only screen and (min-width: $tablet-breakpoint) {
+    width: 37.5%;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url('../images/quote-triangle.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% auto;
+    width: 13.75vw;
+    height: 13.75vw;
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 45px;
+      height: 45px;
+      top: auto;
+      bottom: 0;
+      -moz-transform: scale(-1, -1);
+      -o-transform: scale(-1, -1);
+      -webkit-transform: scale(-1, -1);
+      transform: scale(-1, -1);
+    }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    top: 6.25vw;
+    left: 6.25vw;
+    background-image: url('../images/blue-quotes.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100% auto;
+    width: 10vw;
+    height: 8vw;
+    -moz-transform: scale(-1, 1);
+    -o-transform: scale(-1, 1);
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      width: 55px;
+      height: 45px;
+      top: 35px;
+      left: 45px;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+  }
+}

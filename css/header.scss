@@ -1,0 +1,65 @@
+header#header {
+  position: relative;
+  padding: 6.25vw;
+  transition: all 150ms ease-in-out;
+  overflow: hidden;
+
+  &.nav-open {
+    bottom: 0;
+  }
+
+  @media only screen and (min-width: $tablet-breakpoint) {
+    transition: top 150ms ease-in-out;
+    overflow: visible;
+    position: relative;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    padding: 35px 145px;
+  }
+
+  .header-inner-wrapper {
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  .sticky-header {
+    .logo-wrapper {
+
+      @media only screen and (min-width: $tablet-breakpoint) {
+  
+      }
+  
+      .logo {
+        width: 40vw;
+        @media only screen and (min-width: $tablet-breakpoint) {
+          width: 200px;
+        }
+  
+        a {
+  
+          @media only screen and (min-width: $tablet-breakpoint) {
+  
+          }
+        }
+      }
+    }
+  }
+
+  #header-menu {
+    position: absolute;
+    top: 0;
+    width: 87.5vw;
+    margin: 0 0 0 auto;
+    z-index: 99999;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      position: static;
+      width: auto;
+    }
+  }
+}

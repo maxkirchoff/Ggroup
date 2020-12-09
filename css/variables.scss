@@ -1,0 +1,149 @@
+
+// Breakpoints
+
+$lgdesktop-breakpoint: 1440px;
+$smdesktop-breakpoint: 1000px;
+$tablet-breakpoint: 900px;
+
+// z-indexes
+$z-index-base: 1;
+$z-index-mid: 2;
+$z-index-top: 3;
+$z-index-cheating: 4;
+
+// colors
+$dark-blue: #171735;
+$medium-blue: #0C277D;
+$light-blue: #60CFFF;
+$lightest-blue: rgba(96,207,255,.4);
+
+
+// Mixins
+
+@mixin transition( $transition... ) {
+	transition: $transition;
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+}
+
+@mixin transform( $transform... ) {
+	transform: $transform;
+	-webkit-transform: $transform;
+	-moz-transform: $transform;
+	-ms-transform: $transform;
+	-o-transform: $transform;
+}
+
+@mixin keyframes( $animationName ) {
+	@-webkit-keyframes #{ $animationName } {
+        @content;
+    }
+    @-moz-keyframes #{ $animationName } {
+        @content;
+    }
+    @-o-keyframes #{ $animationName } {
+        @content;
+    }
+    @keyframes #{ $animationName } {
+        @content;
+    }
+}
+
+@mixin clearfix {
+	*zoom: 1;
+	&:before, &:after { display: table; content: ""; }
+	&:after { clear: both; }
+}
+
+@mixin aspect-ratio($ratio-or-width, $height: null) {
+    $padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+    &:before { content:''; display: table-row; float: left; padding-bottom: $padding;  }
+    &:after  { content:''; display: table; clear: both;  }
+}
+
+@mixin placeholder($color, $fontsize, $lineheight){
+	&::-webkit-input-placeholder { color: $color; font-size: $fontsize; line-height: $lineheight; text-transform: uppercase }
+	&:-moz-placeholder { color: $color; font-size: $fontsize; line-height: $lineheight; text-transform: uppercase }
+	&::-moz-placeholder { color: $color; font-size: $fontsize; line-height: $lineheight; text-transform: uppercase }
+	&:-ms-input-placeholder { color: $color; font-size: $fontsize; line-height: $lineheight; text-transform: uppercase }
+}
+
+@mixin responsive-font( $window, $font, $min: false, $max: false ) {
+
+	$responsive-unitless: $font / ( $window / 100 );
+	$responsive: $responsive-unitless + vw;
+
+	@if $min {
+		$min-breakpoint: $min / $responsive-unitless * 100;
+
+		@media (max-width: #{$min-breakpoint}) {
+			font-size: $min;
+		}
+	}
+
+	@if $max {
+		$max-breakpoint: $max / $responsive-unitless * 100;
+
+		@media (min-width: #{$max-breakpoint}) {
+			font-size: $max;
+		}
+	}
+
+	font-size: $font;
+	font-size: $responsive;
+}
+
+@mixin middle {
+	width: 100%;
+	position: absolute;
+	max-height: 100%;
+	max-width: 100%;
+	top: 50%;
+	left: 50%;
+	@include transform( translate(-50%, -50%) );
+}
+
+
+// Utility classes
+
+.middle {
+	@include middle;
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.centered {
+	text-align: center;
+}
+
+.float-right {
+	float: right;
+}
+
+// bounce $animation
+@keyframes bounce {
+	0%, 10%, 30%, 50%, 60%, 100% {
+    @include transform(translateX(0));
+  }
+	20% {
+    @include transform(translateX(30px));
+  }
+	40% {
+    @include transform(translateX(15px));
+  }
+}
+@keyframes reverse-bounce {
+	0%, 10%, 30%, 50%, 60%, 100% {
+    @include transform(translateX(0));
+  }
+	20% {
+    @include transform(translateX(-30px));
+  }
+	40% {
+    @include transform(translateX(-15px));
+  }
+}

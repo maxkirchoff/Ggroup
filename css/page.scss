@@ -1,0 +1,90 @@
+#container {
+
+  .scrolling-columns {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+
+    .column {
+      width: 33.33%;
+      height: 100vh;
+      max-height: 600px;
+      overflow: scroll;
+     
+      .column-inner-wrapper {
+        background: #fff;
+        margin-bottom: 600px;
+      }
+    }
+  }
+}
+
+body.page-template-default, body.error404 {
+  .page-title {
+    font-size: 8.125vw;
+    padding: 0 6.25vw;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      font-size: 46px;
+      padding: 40px 23vw 0;
+    }
+    @media only screen and (min-width: $lgdesktop-breakpoint) {
+      padding: 40px 345px 0;
+    }
+  }
+  .page-content {
+    padding: 10vw 6.25vw;
+    @media only screen and (min-width: $tablet-breakpoint) {
+      padding: 5vw 23vw;
+    }
+    @media only screen and (min-width: $lgdesktop-breakpoint) {
+      padding: 60px 345px;
+    }
+
+    h2, h3, h4, h5, p, ul, ol, * {
+      margin-top: 6.25vw;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        margin-top: 40px;
+      }
+    }
+
+    > *:first-child {
+      margin-top: 0;
+    }
+
+    h2, h3, h4, h5 {
+      font-family: $font_trim;
+    }
+
+    h2 {
+      font-size: 5.625vw;
+      font-weight: 600;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        font-size: 24px;
+      }
+    }
+
+    h3 {
+      font-size: 4.25vw;
+      font-weight: 600;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        font-size: 15px;
+      }
+    }
+
+    h3 + p {
+      margin-top:0;
+    }
+
+    * + h2 {
+      margin-top: 8.125vw;
+      @media only screen and (min-width: $tablet-breakpoint) {
+        margin-top: 40px;
+      }
+    }
+
+
+    p, ul, ol, * {
+    }
+  }
+}
