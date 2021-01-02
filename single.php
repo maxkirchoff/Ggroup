@@ -1,16 +1,7 @@
 <?php get_header(); ?>
   <main id="content">
     <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-      <?php if (!has_category('featured') && isset(get_the_category()[0])): ?>
-      <?php
-        $post = get_post();
-        $post_slug = $post->post_name;
-        $category_url = '/resources/' . get_the_category()[0]->slug  . "#" . $post_slug;
-      ?>
-      <script>
-        window.location.replace("<?php echo $category_url ?>");
-      </script>
-      <?php endif; ?>
+      
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <header>
           <?php if ( has_post_thumbnail() ) : ?>

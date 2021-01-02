@@ -20,48 +20,12 @@
            $args = array( 
             'post_type' => 'resources',
             'meta_key' => 'type',
-            'meta_value' => 'pdf'
-            );
-            $post_query = new WP_Query( $args );
-
-            if ($post_query->have_posts() ) : 
-        ?>
-            <h3>PDF LIBRARY</h3>
-            <div class="pdfs">
-                <?php 
-                    while($post_query->have_posts() ) :
-                    $post_query->the_post();
-                ?>
-                    <div class="pdf">
-                        <div class="resource-image">
-                            <img src="<?php echo get_field('image')['url']; ?>">
-                        </div>
-                        <div class="resource-content">
-                            <div>
-                                <h2><?php the_title(); ?></h2>
-                            </div>
-                            <div>
-                                <a href="<?php the_field('pdf'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
-                            </div>
-                        </div>
-                        
-                    </div>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-        <?php wp_reset_query(); ?>
-
-        <?php
-           $args = array( 
-            'post_type' => 'resources',
-            'meta_key' => 'type',
             'meta_value' => 'video'
             );
             $post_query = new WP_Query( $args );
 
             if ($post_query->have_posts() ) : 
         ?>
-            <h3>VIDEO LIBRARY</h3>
             <div class="videos">
                 <?php 
                     while($post_query->have_posts() ) :
@@ -69,15 +33,14 @@
                 ?>
                     <div class="video">
                         <div class="resource-image">
-                            <img src="<?php echo get_field('image')['url']; ?>">
+                            <a href="<?php the_field('video_url'); ?>" target="_blank">
+                                <img src="<?php echo get_field('image')['url']; ?>">
+                            </a>
                         </div>
                         <div class="resource-content">
-                            <div>
-                                <h2><?php the_title(); ?></h2>
-                            </div>
-                            <div>
-                                <a href="<?php the_field('video_url'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
-                            </div>
+                                <h3><?php the_title(); ?></h3>
+                           
+                                <a href="<?php the_field('video_url'); ?>" class="link-arrow" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
                         </div>
                         
                     </div>
@@ -88,15 +51,3 @@
         
     </div>
 <?php endif; ?>
-
-        
-    <div class="newsletter">
-        <form>
-            <label for="subscirbe-input" class="prompt">
-                <?php echo $editorials['subscribe_prompt'] ?>
-            </label>
-            <input name="subscirbe-input" type="email" />
-            <button> <?php echo $editorials['subscribe_button_text'] ?></button>
-        </form>
-    </div>
-

@@ -3,6 +3,7 @@ header#header {
   padding: 6.25vw;
   transition: all 150ms ease-in-out;
   overflow: hidden;
+  border-bottom: 1px solid $black;
 
   &.nav-open {
     bottom: 0;
@@ -29,6 +30,26 @@ header#header {
   }
 
   .sticky-header {
+    position: fixed;
+    z-index: 999;
+    top: -9.5vw;
+    left: 0;
+    right: 0;
+    height: 9.5vw;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+    border-bottom: 1px solid $black;
+    transition: top ease-in 250ms;
+
+    body.scrolled & {
+      top: 0;
+    }
+
+
     .logo-wrapper {
 
       @media only screen and (min-width: $tablet-breakpoint) {
@@ -38,7 +59,7 @@ header#header {
       .logo {
         width: 40vw;
         @media only screen and (min-width: $tablet-breakpoint) {
-          width: 200px;
+          width: 29vw;
         }
   
         a {
@@ -47,7 +68,47 @@ header#header {
   
           }
         }
+
+        img {
+          display: block;
+        }
       }
+    }
+
+    .tagline-and-menu {
+      text-transform: uppercase;
+      font-size: 1.38vw;
+
+      #menu {
+        margin-top: 1vw;
+        ul {
+          list-style: none;
+          li {
+            display: block;
+            padding: 0;
+            margin: 0;
+            line-height: 1.1;
+
+            a {
+              color: $black;
+
+              &:hover {
+                text-decoration: none;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+
+    .lets-get-weird {
+      width: 8vw;
+      img {
+        display: block;
+      }
+
     }
   }
 

@@ -7,33 +7,47 @@
         </h2>
         <?php
             $args = array(
-                'post_type' => 'post'
+                'post_type' => 'post',
+                'posts_per_page' => '-1'
             );
 
             $post_query = new WP_Query($args);
-
+            $post_count = 0;
             if ($post_query->have_posts() ) : 
         ?>
             <div class="editorials">
-                <?php 
-                    while($post_query->have_posts() ) :
-                    $post_query->the_post();
-                ?>
-                    <div class="editorial">
-                        <div class="feature-image">
-                            <?php the_post_thumbnail("medium"); ?>
-                        </div>
-                        <div class="feature-content">
-                            <div>
-                                <h2><?php the_title(); ?></h2>
+                <div class="editorial-group">
+                    <?php 
+                        while($post_query->have_posts() ) :
+                        $post_query->the_post();
+                    ?>
+                        <?php if ($post_count >= 5): ?>
+                            </div><div class="editorial-group">
+                        <?php 
+                            $post_count = 0;
+                            endif;
+                        ?>
+
+                        <div class="editorial">
+                            <div class="feature-image">
+                                <a href="<?php echo get_permalink(); ?>">
+                                    <?php if (has_post_thumbnail()) : ?>
+                                        <?php the_post_thumbnail(); ?>
+                                    <?php else : ?>
+                                        <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/default-post-thumbnail.jpg">
+                                    <?php endif; ?>
+                                </a>
                             </div>
-                            <div>
-                                <a href="<?php echo get_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
+                            <div class="feature-content">
+                                <h3><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></h3>
+                            
+                                <a class="link-arrow" href="<?php echo get_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
                             </div>
                         </div>
-                        
-                    </div>
-                <?php endwhile; ?>
+                            
+                    <?php $post_count = $post_count + 1; endwhile; ?>
+                </div>
+                <a class="load-more button" href="#">MORE</a>
             </div>
         <?php endif; ?>
         <?php wp_reset_query(); ?>

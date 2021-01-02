@@ -1,35 +1,80 @@
 footer#footer {
-    padding: 18.875vw 6.25vw 6.25vw;
-    @media only screen and (min-width: $tablet-breakpoint) {
-        padding: 0;
+    border-top: 1px solid $black;
+    padding: 4vw 2vw;
 
-    }
-
-    a {
-        color: #000;
-        text-decoration: none;
-        border: 0;
-        font-weight: 600;
-    }
 
     .footer-inner-wrapper {
-        @media only screen and (min-width: $tablet-breakpoint) {
-            padding: 60px 140px 60px 250px;
-            position: relative;
+        .row {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: top;
+            .column {
+                display: flex;
+                flex-direction: column;
+
+                &:first-of-type {
+                    width: 11.5vw;
+                }
+
+                &:nth-of-type(2) {
+                    width: 34vw;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    form {
+                        padding: 0;
+
+                        input {
+                            flex-grow: 1;
+                            width: auto;
+                        }
+
+                        button {
+                            width: auto;
+                        }
+                    }
+
+                    .slogan {
+                        text-transform: uppercase;
+                    }
+                }
+
+                &:last-of-type {
+                    width: 34vw;
+
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .daily-resource {
+                        a {
+                            display: block;
+                            color: $black;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            font-size: 2vw;
+                            margin-top: 1vw;
+                        }
+                    }
+
+                    .social-and-cp {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: bottom;
+
+                        .copyright {
+                            margin-left: 0.5vw;
+                        }
+                    }
+                }
+            }
         }
 
-
         .footer-logo {
-            width: 37.25vw;
-            @media only screen and (min-width: $tablet-breakpoint) {
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: -3.8px;
-              right: auto;
-              width: auto;
-              z-index: 9;
-            }
+            width: 100%;
 
             img {
               display: block;

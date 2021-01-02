@@ -29,15 +29,17 @@
             <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/GGroup-LogoType-White.svg">
           </div>
         </div>
-        <div class="site-tagline">
-          <?php bloginfo('description'); ?>
-        </div>
-
-        <nav id="header-menu">
-          <div id="menu">
-            <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+        <div class="tagline-and-menu">
+          <div class="site-tagline">
+            <?php bloginfo('description'); ?>
           </div>
-        </nav>
+
+          <nav id="header-menu">
+            <div id="menu">
+              <?php wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); ?>
+            </div>
+          </nav>
+        </div>
         <div class="lets-get-weird">
           <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/lets-get-weird.png">
         </div>

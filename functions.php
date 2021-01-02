@@ -212,7 +212,7 @@ add_image_size( 'homepage_hero', 1600, 1200, true );
 add_image_size( 'quote_image', 1080, 1000, true );
 add_image_size( 'resources_header_image', 1440, 480, true );
 add_image_size( 'headshot_image', 500, 500, true );
-set_post_thumbnail_size( 800, 400, true );
+set_post_thumbnail_size( 910, 676, true );
 add_image_size( 'featured_article_page_image', 1440, 480, true );
 
 

@@ -5,10 +5,7 @@
             <br>
             <?php echo $calendar['title']; ?>
         </h2>
-        <div class="today">
-            <h3>Next Event:</h3>
-            <p>Nothing Scheduled. Breathe easy.</p>
-        </div>
+
 
         <?php
             $today = date('Ymd');
@@ -32,7 +29,7 @@
 
             if ($post_query->have_posts() ) : 
         ?>
-            <h3>Upcoming:</h3>
+            
             <div class="events">
                 <?php 
                     while($post_query->have_posts() ) :
@@ -48,7 +45,7 @@
                         <div class="event-title">
                             <?php the_title(); ?>
                         </div>
-                        <div>
+                        <div class="link-arrow">
                             <a href="<?php the_field('url'); ?>" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/arrow-btn.svg"></a>
                         </div>
                     </div>
@@ -59,7 +56,9 @@
                     </div>
     <div class="ccoaching">
         <p><?php echo $calendar['ccoaching_prompt']; ?></p>
-        <a href="#" class="button"><?php echo $calendar['ccoaching_button_text']; ?></a>
+        <div class="button-wrapper">
+            <a href="/ccoaching" class="button"><?php echo $calendar['ccoaching_button_text']; ?></a>
+        </div>
     </div>
 <?php endif; ?>
 
