@@ -1,28 +1,41 @@
 footer#footer {
     border-top: 1px solid $black;
-    padding: 4vw 2vw;
+    padding: 7.5vw 5vw;
+
+    @media only screen and (min-width: $tablet-breakpoint) {
+        padding: 4vw 2vw;
+    }
 
 
     .footer-inner-wrapper {
         .row {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             justify-content: space-between;
             align-items: top;
+
+            @media only screen and (min-width: $tablet-breakpoint) {
+                flex-direction: row;
+            }
             .column {
                 display: flex;
                 flex-direction: column;
 
                 &:first-of-type {
-                    width: 11.5vw;
+                    @media only screen and (min-width: $tablet-breakpoint) {
+                        width: 11.5vw;
+                    }
                 }
 
                 &:nth-of-type(2) {
-                    width: 34vw;
+                    
+                    @media only screen and (min-width: $tablet-breakpoint) {
+                        width: 34vw;
 
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                    }
 
                     form {
                         padding: 0;
@@ -43,11 +56,15 @@ footer#footer {
                 }
 
                 &:last-of-type {
-                    width: 34vw;
 
                     display: flex;
                     flex-direction: column;
                     justify-content: space-between;
+
+                    @media only screen and (min-width: $tablet-breakpoint) {
+                        width: 34vw;
+
+                    }
 
                     .daily-resource {
                         a {
@@ -63,10 +80,42 @@ footer#footer {
                     .social-and-cp {
                         display: flex;
                         flex-direction: row;
-                        align-items: bottom;
+                        align-items: center;
+                        justify-content: space-between;
+                        @media only screen and (min-width: $tablet-breakpoint) {
+                            align-items: bottom;
+                            justify-content: flex-start;
+                        }
+
+                        .social {
+                            display: flex;
+                            flex-direction: row;
+                            @media only screen and (min-width: $tablet-breakpoint) {
+                                
+                            }
+
+                            > a {
+                                margin-right: 5vw;
+                                height: 7.5vw;
+                                @media only screen and (min-width: $tablet-breakpoint) {
+                                    height: 2vw;
+                                    margin-right: 1vw;
+                                }
+
+                                svg {
+                                    display: block;
+                                    height: 100%;
+                                    width: auto;
+                                }
+                            }
+                        }
 
                         .copyright {
-                            margin-left: 0.5vw;
+                            text-align: right;
+                            @media only screen and (min-width: $tablet-breakpoint) {
+                                text-align: left;
+                                margin-left: 0.5vw;
+                            }
                         }
                     }
                 }
@@ -118,6 +167,14 @@ footer#footer {
                     text-align: right;;
                 }
             }
+        }
+
+        .newsletter {
+            margin-bottom: 7.5vw;
+            @media only screen and (min-width: $tablet-breakpoint) {
+                margin-bottom: 0;
+            }
+
         }
     }
 }

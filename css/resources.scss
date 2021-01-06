@@ -167,7 +167,7 @@
 
         button {
           background-color: $dark-blue;
-          color: #fff;
+          color: $white;
           font-weight: 600;
           padding: 2vw 5vw;
           display: flex;
@@ -264,7 +264,7 @@ body.category {
           font-size: 8.125vw;
           @media only screen and (min-width: $tablet-breakpoint) {
            font-size: 46px;
-           color: #fff;
+           color: $white;
            padding: 0 145px;
           }
         }

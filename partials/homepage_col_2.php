@@ -47,7 +47,9 @@
                             
                     <?php $post_count = $post_count + 1; endwhile; ?>
                 </div>
-                <a class="load-more button" href="#">MORE</a>
+                <div class="button-wrapper">
+                    <a class="load-more button" href="#">MORE</a>
+                </div>
             </div>
         <?php endif; ?>
         <?php wp_reset_query(); ?>

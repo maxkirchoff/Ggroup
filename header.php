@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-
-<?php wp_site_icon() ?>
-
-<meta name="msapplication-TileColor" content="#da532c">
-<meta name="theme-color" content="#ffffff">
-<?php wp_head(); ?>
-
-</head>
-<body <?php body_class(); ?>>
-<div id="wrapper" class="hfeed">
+<?php require('superheader.php') ?>
   <header id="header">
     <div class="header-inner-wrapper">
       <div class="nonsticky-header">
         <div class="logo-wrapper">
           <div class="logo">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/GGroup-LogoType-White.svg">
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/GGroup-LogoType-White.svg"></a>
           </div>
         </div>
       </div>
@@ -26,7 +12,7 @@
       <div class="sticky-header">
         <div class="logo-wrapper">
           <div class="logo">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/GGroup-LogoType-White.svg">
+            <a href="/"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/GGroup-LogoType-White.svg"></a>
           </div>
         </div>
         <div class="tagline-and-menu">

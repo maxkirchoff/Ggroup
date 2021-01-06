@@ -5,6 +5,11 @@
             <br>
             <?php echo $shop['title']; ?>
         </h2>
+        <div class="product-wrapper">
+            <div class="product">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/t-shirt.jpg">
+            </div>
+        </div>
     </div>
 <?php endif; ?>
 

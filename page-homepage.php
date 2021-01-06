@@ -10,7 +10,7 @@ get_header();
 
   <?php require('partials/homepage_hero.php'); ?>
 
-  <div class="scrolling-columns" style="background-image: url('<?php echo get_field('hidden_image')['url']; ?>');'">
+  <div class="scrolling-columns" style="background-image: url('<?php echo get_field('hidden_image')['url']; ?>');">
     <div class="column">
       <div class="column-inner-wrapper">
         <?php require('partials/homepage_col_1.php'); ?>

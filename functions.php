@@ -214,6 +214,7 @@ add_image_size( 'resources_header_image', 1440, 480, true );
 add_image_size( 'headshot_image', 500, 500, true );
 set_post_thumbnail_size( 910, 676, true );
 add_image_size( 'featured_article_page_image', 1440, 480, true );
+add_image_size( 'profile_photo_image', 620, 740, true );
 
 
 show_admin_bar(false);
